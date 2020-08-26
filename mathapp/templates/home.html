@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+Math-a-Thon
+{% endblock title %}
+{% block content %}
+
+<div class="container mt-4">
+<div class="jumbotron">
+    <center><h1 class="display-4 text-primary"><strong>Welcome to the world of Math-a-Thon!</strong></h1>
+    <h3 class="text-info">Mathematics deals with numbers and relations among them.</h3>
+    <hr class="my-4">
+    <h4>The basic operation involve addition, subtraction, multiplication and division, which are the foundation for advanced math topics</h4>
+        <h4 class="text-success">Practice these operations by clicking on below buttons!</h4>
+        <a class="btn btn-info btn-lg" href="{% url 'add' %}" role="button">Addition</a>
+        <a class="btn btn-warning btn-lg" href="{% url 'substract' %}" role="button">Substraction</a>
+        <a class="btn btn-dark btn-lg" href="{% url 'multiply' %}" role="button">Multiplication</a>
+        <a class="btn btn-success btn-lg" href="{% url 'divide' %}" role="button">Division</a>
+    </center>
+  </div>
+</div>
+
+{% endblock content %}
+
+
+
+
+
+

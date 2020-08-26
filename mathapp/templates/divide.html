@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Math-a-Thon Add
+{% endblock title %}
+{% block content %}
+<center><h1>Welcome to the world of Math-a-Thon!</h1>
+<br>
+    {% if my_answer %}
+    <div class="alert alert-{{color}} alert-dismissible fade show" role="alert">
+        <strong>{{my_answer}}</strong> 
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %}
+
+
+  <div class="card">
+    <h1>
+      <span class="enclosed">{{num1}}</span>  &divide <span class="enclosed">{{num2}}</span>
+    </h1>
+  </div>
+    <br>
+
+<form method="POST" action="{% url 'divide' %}" >
+    {% csrf_token %}
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Enter answer rounded to 2 decimal places!" name="answer">
+    </div>
+    <input type="hidden" name="old_num1" value="{{num1}}">
+    <input type="hidden" name="old_num2"  value="{{num2}}">
+    <button type="submit" class="btn btn-secondary">Submit Your Answer!</button>
+</form>
+
+</center>
+{% endblock content %}
